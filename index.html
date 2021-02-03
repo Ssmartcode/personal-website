@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>AR web development</title>
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -14,7 +14,12 @@
       rel="stylesheet"
     />
     <!-- STYLESHEET -->
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/mobile.css"
+      media="screen and (max-width:600px)"
+    />
     <!-- FONT AWESOME -->
     <link
       rel="stylesheet"
@@ -47,19 +52,24 @@
 
     <!-- ---HOME SECTION--- -->
     <section id="home">
+      <div class="container">
+        <h1>FREELANCE<br />WEB DEVELOPER.</h1>
+        <button class="button button-contact">
+          <span class="">Contact me</span>
+        </button>
+        <button class="button button-work">
+          <span class="">My work</span>
+        </button>
+      </div>
       <div class="logo"><span class="a">A</span><span class="r">R</span></div>
-      <h1>FREELANCE<br />WEB DEVELOPER.</h1>
       <p>&lt;p&gt; <span class="type-effect"></span> &lt;/p&gt;</p>
-      <button class="button button-contact contact-link">
-        <span class="">Contact me</span>
-      </button>
     </section>
 
     <!-- ---CONTACT SECTION--- -->
     <section id="contact" class="hidden">
       <h1>Contact me</h1>
       <div class="line"></div>
-      <form action="">
+      <form name="contact" method="POST" data-netliify="true">
         <input
           class="name p-1 input-style"
           type="text"
@@ -104,7 +114,7 @@
 
     <!-- ---ABOUT SECTION--- -->
     <section id="about" class="about hidden">
-      <img class="profile-image" src="./profile.png " alt="" />
+      <img class="profile-image" src="./images/profile.png " alt="" />
       <div class="text-content">
         <h1>Who am i?</h1>
         <div class="line"></div>

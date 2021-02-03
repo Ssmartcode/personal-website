@@ -1,0 +1,67 @@
+body {
+  overflow-y: scroll;
+}
+footer {
+  display: none;
+}
+.logo {
+  font-size: 12rem;
+}
+
+/* SIDEBAR */
+.side-bar .logo {
+  display: none;
+}
+.side-bar {
+  justify-content: center;
+}
+
+/* CONTACT */
+#contact form {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+#contact input,
+#contact textarea {
+  text-align: center;
+}
+#contact .contact-info {
+}
+
+#contact .social-media {
+  display: none;
+}
+
+/* HOME */
+#home {
+  flex-flow: column;
+}
+#home p .type-effect::after {
+  display: none;
+}
+#home p {
+  order: 2;
+}
+#home .container {
+  order: 1;
+}
+
+/* ABOUT */
+#about {
+  flex-flow: column;
+}
+#about .profile-image {
+  width: 100%;
+}
+#about .text-content {
+  margin: 0%;
+}
+@keyframes highlight {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
