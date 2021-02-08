@@ -10,8 +10,8 @@ const contactMeLink = document.querySelector(".contact-link");
 const body = document.querySelector("body");
 
 // FOOTER
-const footer = document.querySelector("footer");
-const footerCross = document.querySelector(".cross");
+// const footer = document.querySelector("footer");
+// const footerCross = document.querySelector(".cross");
 
 // HOME TYPING PARAGRAPH
 let typeEffectParagraph = document.querySelector(".type-effect");
@@ -47,7 +47,7 @@ const scrollToTop = () => {
 };
 
 // HIDE THE FOOTER
-footerCross.addEventListener("click", () => (footer.style.display = "none"));
+// footerCross.addEventListener("click", () => (footer.style.display = "none"));
 
 // ADD SECONDARY COLOR TO THE ICON WHICH IS RELATED TO THE ACTIVE PAGE
 const toggleActivePage = function () {

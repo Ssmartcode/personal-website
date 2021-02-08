@@ -6,18 +6,14 @@
 :root {
   --main-color: #6deeff;
   --secondary-color: #f05454;
-  --gradient: linear-gradient(
-    97deg,
-    rgb(247, 247, 247) 0%,
-    rgba(109, 238, 255, 1) 100%
-  );
+  --text-color: #333;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
-  background-color: #0f0f0f;
-  background-image: url("https://www.transparenttextures.com/patterns/shattered.png");
+  background-color: #e9e9e9;
+  background-image: url("https://www.transparenttextures.com/patterns/rocky-wall.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 textarea,
@@ -32,8 +28,8 @@ img {
 }
 
 h1 {
-  font-family: "Yusei Magic", sans-serif;
-  color: #f4f4f4;
+  font-family: "Lexend Exa", sans-serif;
+  color: var(--text-color);
   font-size: 2.5rem;
   margin: 2rem auto;
   align-self: center;
@@ -44,7 +40,7 @@ i {
   color: rgba(255, 255, 255, 0.9);
 }
 p {
-  color: #f4f4f4;
+  color: var(--text-color);
   font-size: 1.5rem;
 }
 ul {
@@ -59,7 +55,7 @@ ul {
   position: relative;
   border: none;
   background: var(--secondary-color);
-  color: #f4f4f4;
+  color: var(--text-color);
   font-size: 1.4rem;
   padding: 1rem 2rem;
   border: 4px #333 solid;
@@ -97,7 +93,7 @@ ul {
 .line {
   width: 150px;
   height: 2px;
-  background: var(--gradient);
+  background: var(--main-color);
   margin: 2rem auto;
 }
 .hidden {
@@ -124,38 +120,20 @@ ul {
   position: absolute;
   width: 3px;
   height: 15px;
-  background-color: #f4f4f4;
+  background-color: var(--text-color);
   transform: rotate(45deg);
 }
 .right {
   position: absolute;
   width: 3px;
   height: 15px;
-  background-color: #f4f4f4;
+  background-color: var(--text-color);
   transform: rotate(-45deg);
 }
 
 /*-- LOGO --*/
 .logo {
-  padding: 0.5rem;
-  font-family: "Bangers", cursive;
-  color: transparent;
-  font-size: 24rem;
-  background: var(--gradient);
-  background-clip: text;
-  text-align: center;
-  -webkit-background-clip: text;
-  user-select: none;
-}
-
-.logo .a:hover,
-.logo .r:hover {
-  cursor: default;
-}
-
-.logo::after {
-  content: "Web Development";
-  font-size: 1.4rem;
+  width: 500px;
 }
 
 /* SIDE BAR */
@@ -167,7 +145,7 @@ ul {
   align-items: center;
   width: 10vw;
   height: 100vh;
-  background: rgba(51, 51, 51, 0.6);
+  background: rgba(51, 51, 51, 0.8);
   position: fixed;
 }
 .side-bar ul {
@@ -183,12 +161,8 @@ ul {
   cursor: pointer;
 }
 .side-bar .logo {
-  font-size: 4rem;
-  width: 100%;
+  width: 150px;
   margin-bottom: auto;
-}
-.side-bar .logo::after {
-  content: "";
 }
 /* SIDE BAR -- LINKS TEXT */
 .home-icon::after,
@@ -206,7 +180,7 @@ ul {
   opacity: 0;
   z-index: -1;
   transform: translateX(-25px);
-  transition: ease opacity 1s, transform 0.5s;
+  transition: ease opacity 0.5s, transform 0.5s;
 }
 .home-icon:hover::after,
 .contact-icon:hover::after,
@@ -224,26 +198,26 @@ ul {
   width: 90vw;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: 2rem;
   transition: all 0.5s;
 }
 #home h1 {
-  animation: highlight 2s ease-in-out infinite alternate;
+  animation: highlight 1.7s ease-out infinite alternate;
 }
 #home .container {
   flex: 1fr;
 }
 #home p {
-  width: 100%;
-  text-align: center;
+  min-width: 70%;
+  text-align: left;
   font-size: 2.3rem;
   color: rgb(35, 61, 206);
 }
 #home p .type-effect {
   position: relative;
-  color: #f4f4f4;
+  color: var(--text-color);
 }
 #home p .type-effect::after {
   content: "";
@@ -252,12 +226,12 @@ ul {
   height: 70%;
   top: 15%;
   margin-left: 5px;
-  background: #f4f4f4;
+  background: var(--text-color);
   animation: blink 0.8s infinite;
 }
 #home .button-contact,
 .button-work {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 1rem 0;
   width: 49%;
   font-weight: 500;
@@ -335,19 +309,21 @@ ul {
 }
 .contact-group i {
   margin: 0 5px;
+  color: var(--text-color);
 }
 .social-media i {
   margin: 0 0.5rem;
-  border: 2px solid #fff;
+  border: 2px solid var(--text-color);
   border-radius: 10px;
   cursor: pointer;
   padding: 7px;
   transition: all 0.5s;
+  color: var(--text-color);
 }
 .social-media i:hover {
   transform: scale(1.2);
   background-color: var(--secondary-color);
-  color: #f4f4f4;
+  color: #fff;
 }
 /* ---FOOTER--- */
 footer {
@@ -369,7 +345,7 @@ footer a.contact-link {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }
 @keyframes blink {
