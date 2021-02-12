@@ -65,3 +65,16 @@ footer {
     transform: scale(1.1);
   }
 }
+/*  */
+#home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#about {
+  display: flex;
+}
+#contact {
+  text-align: center;
+}

@@ -5,6 +5,7 @@
 }
 :root {
   --main-color: #6deeff;
+  --main-transparent: rgba(109, 238, 255, 0.8);
   --secondary-color: #f05454;
   --text-color: #333;
 }
@@ -13,8 +14,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
   background-color: #e9e9e9;
-  background-image: url("https://www.transparenttextures.com/patterns/rocky-wall.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-image: url("../images/rocky-wall.png");
 }
 textarea,
 input,
@@ -36,6 +36,10 @@ h1 {
   word-spacing: 1.2;
   letter-spacing: 2;
 }
+h2 {
+  font-family: "Lexend Exa", "sans-serif";
+  font-size: 1.3rem;
+}
 i {
   color: rgba(255, 255, 255, 0.9);
 }
@@ -46,10 +50,24 @@ p {
 ul {
   list-style-type: none;
 }
-
+a {
+  text-decoration: none;
+}
 /* ---UTILITIES--- */
 .p-1 {
   padding: 1rem;
+}
+.container {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.section {
+  position: absolute;
+  left: 10vw;
+  height: 100%;
+  width: 90vw;
+  padding: 2rem;
+  transition: all 0.5s;
 }
 .button {
   position: relative;
@@ -192,22 +210,18 @@ ul {
 
 /* --- HOME SECTION --- */
 #home {
-  position: relative;
-  left: 10vw;
-  height: 100%;
-  width: 90vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  padding: 2rem;
-  transition: all 0.5s;
 }
 #home h1 {
   animation: highlight 1.7s ease-out infinite alternate;
 }
 #home .container {
   flex: 1fr;
+  max-width: 100%;
+  margin: 0;
 }
 #home p {
   min-width: 70%;
@@ -241,16 +255,11 @@ ul {
 }
 /* ABOUT */
 #about {
-  position: absolute;
-  width: 90vw;
-  left: 10vw;
   display: flex;
-  padding: 2rem;
-  top: 0;
-  transition: all 0.5s;
 }
 #about .profile-image {
   width: 500px;
+  height: 500px;
 }
 #about .text-content {
   margin-left: 3rem;
@@ -260,16 +269,80 @@ ul {
 #about .text-content p {
   text-align: justify;
 }
+/* WORK SECTION */
+#work {
+  text-align: center;
+}
+
+#work .container {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+#work .work-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+#work .work-card p {
+  font-size: 1.1rem;
+  color: #111;
+}
+#work .card-overlay {
+  position: absolute;
+  background-color: var(--main-transparent);
+  border-radius: 100%;
+  transform: translate(-100%, -100%);
+  transition: all 0.8s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#work .work-card:hover .card-overlay {
+  visibility: visible;
+  transform: translate(0, 0);
+  border-radius: 0;
+}
+#work .modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#work .modal-inner {
+  background-color: #f4f4f4;
+  max-width: 700px;
+  text-align: left;
+  box-shadow: 1px 10px 15px #666;
+  border-radius: 10px;
+  padding: 3rem;
+  z-index: 100;
+}
+
+#work .modal p {
+  margin: 2rem 0;
+}
+#work .modal .button {
+  padding: 0.25rem 0.75rem;
+  background-color: transparent;
+  border: 1px solid;
+}
+
 /* CONTACT SECTION */
 #contact {
-  position: absolute;
-  width: 90vw;
-  height: 100%;
-  left: 10vw;
-  padding: 2rem;
   text-align: center;
-  top: 0;
-  transition: all 0.5s;
 }
 #contact form {
   max-width: 800px;

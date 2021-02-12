@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Andrei Razvan web developer and wordpress developer. Designing websites. Freelancer on Fiverr. Full stack developer"
+      content="Andrei Razvan Web Developer and Wordpress Developer. Designing websites. Freelancer on Fiverr. Full stack developer"
     />
     <meta
       name="keywords"
@@ -39,7 +39,7 @@
     <script defer src="test.js"></script>
   </head>
   <body>
-    <!-- SIDE BAR -->
+    <!-- ---SIDE BAR--- -->
     <div class="side-bar">
       <div class="logo"><img src="./images/logo-sidebar.png" alt="" /></div>
       <ul>
@@ -59,7 +59,7 @@
     </div>
 
     <!-- ---HOME SECTION--- -->
-    <section id="home">
+    <section id="home" class="section">
       <div class="container">
         <h1>FREELANCE<br />WEB DEVELOPER.</h1>
         <button class="button button-contact">
@@ -74,7 +74,7 @@
     </section>
 
     <!-- ---CONTACT SECTION--- -->
-    <section id="contact" class="hidden">
+    <section id="contact" class="hidden section">
       <h1>Contact me</h1>
       <div class="line"></div>
       <form name="contact" method="POST" data-netlify="true">
@@ -107,10 +107,6 @@
       </form>
       <div class="contact-info">
         <div class="contact-group">
-          <i class="fas fa-phone"></i>
-          <p>+40740426822</p>
-        </div>
-        <div class="contact-group">
           <i class="fas fa-envelope-open"></i>
           <p>razvan.anca.andrei@gmail.com</p>
         </div>
@@ -122,8 +118,57 @@
       </div>
     </section>
 
+    <!--  ---WORK SECTION--- -->
+    <section id="work" class="work hidden section">
+      <h1>See my work</h1>
+      <div class="line"></div>
+      <div class="container">
+        <!-- encrypt project -->
+        <div name="encrypt" class="work-card">
+          <img src="./images/criptare.png" alt="" />
+          <div class="card-overlay">
+            <h2>Encrypt app</h2>
+            <p>Encrytion application with xor and caesar</p>
+          </div>
+        </div>
+        <div class="modal hidden">
+          <div class="modal-inner">
+            <h2>Encryption app which uses xor cipher and caesar cipher</h2>
+            <p>
+              XOR cipher and caesar cipher are pretty simple to understand. You
+              can find more about these. Go and check this ap now.
+            </p>
+            <a class="button" href="https://game.andrei-razvan.com"
+              ><span>Check it</span></a
+            >
+          </div>
+        </div>
+
+        <!-- game project -->
+        <div name="game" class="work-card">
+          <img src="./images/game.png" alt="" />
+          <div class="card-overlay">
+            <h2>Game</h2>
+            <p>Computer vs player game</p>
+          </div>
+        </div>
+        <div class="modal hidden">
+          <div class="modal-inner">
+            <h2>Computer vs player game</h2>
+            <p>
+              This is a game in which you play against the computer. First to
+              get a score of 50 or more wins the game
+            </p>
+            <a class="button" href="game.andrei-razvan.com"
+              ><span>Check it</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ---ABOUT SECTION--- -->
-    <section id="about" class="about hidden">
+    <section id="about" class="about hidden section">
       <img class="profile-image" src="./images/profile.png " alt="" />
       <div class="text-content">
         <h1>Who am i?</h1>

@@ -1,14 +1,17 @@
 "use strict";
 // HTML SECTIONS AND NAVBAR ICONS
 const home = document.querySelector("#home");
-const about = document.querySelector(".about");
 const contact = document.querySelector("#contact");
-const aboutIcon = document.querySelector(".about-icon");
+const work = document.querySelector("#work");
+const about = document.querySelector(".about");
+
 const homeIcon = document.querySelector(".home-icon");
 const contactIcon = document.querySelector(".contact-icon");
-const contactMeLink = document.querySelector(".contact-link");
-const body = document.querySelector("body");
+const workIcon = document.querySelector(".work-icon");
+const aboutIcon = document.querySelector(".about-icon");
 
+const sideBar = document.querySelector(".side-bar");
+const modals = document.querySelectorAll(".modal");
 // FOOTER
 // const footer = document.querySelector("footer");
 // const footerCross = document.querySelector(".cross");
@@ -17,27 +20,30 @@ const body = document.querySelector("body");
 let typeEffectParagraph = document.querySelector(".type-effect");
 
 const sections = {
-  about: {
-    icon: aboutIcon,
-    page: about,
-  },
   home: {
     icon: homeIcon,
     page: home,
+  },
+  work: {
+    icon: workIcon,
+    page: work,
   },
   contact: {
     icon: contactIcon,
     page: contact,
   },
+  about: {
+    icon: aboutIcon,
+    page: about,
+  },
 };
-const linkIcons = [aboutIcon, homeIcon, contactIcon];
-const pages = [sections.home, sections.contact, sections.about];
+const linkIcons = [aboutIcon, workIcon, homeIcon, contactIcon];
+const pages = [sections.home, sections.contact, sections.work, sections.about];
 
 let pageIndex = 0;
 let currentPage = sections.home;
 
 // SET OVERFLOW SCROLL FOR ABOUT
-
 // SCROLL TO TOP FUNCTION
 const scrollToTop = () => {
   window.scroll({
@@ -64,15 +70,12 @@ const switchPage = (current, next) => {
   // scrollToTop();
 };
 
-// EVENT LISTENERS FOR LINK ICONS
-homeIcon.addEventListener("click", function () {
-  switchPage(currentPage, sections.home);
-});
-contactIcon.addEventListener("click", function () {
-  switchPage(currentPage, sections.contact);
-});
-aboutIcon.addEventListener("click", function () {
-  switchPage(currentPage, sections.about);
+// EVENT LISTENER ON SIDE-BAR
+sideBar.addEventListener("click", (e) => {
+  const targetIcon = e.target.getAttribute("name");
+  if (targetIcon) {
+    switchPage(currentPage, sections[targetIcon]);
+  }
 });
 // EVENT LLISTENER FOR CA BUTTONS
 document
@@ -80,18 +83,18 @@ document
   .addEventListener("click", () => switchPage(currentPage, sections.contact));
 document
   .querySelector(".button-work")
-  .addEventListener("click", () => switchPage(currentPage, sections.contact));
+  .addEventListener("click", () => switchPage(currentPage, sections.work));
 
 // EVENT LISTENER FOR KEY DOWN AND UP
 document.addEventListener("keydown", (e) => {
   // ArrowUp
   // ArrowDown
   if (e.key === "ArrowUp") {
-    pageIndex === 0 ? (pageIndex = 2) : pageIndex--;
+    pageIndex === 0 ? (pageIndex = 3) : pageIndex--;
     switchPage(currentPage, pages[pageIndex]);
   }
   if (e.key === "ArrowDown") {
-    pageIndex === 2 ? (pageIndex = 0) : pageIndex++;
+    pageIndex === 3 ? (pageIndex = 0) : pageIndex++;
     switchPage(currentPage, pages[pageIndex]);
   }
 });
@@ -100,16 +103,36 @@ document.addEventListener("keydown", (e) => {
 //   switchPage(currentPage, contact);
 //   toggleActivePage.call(contactIcon);
 // });
-
+//
+const displayModal = (target) => {
+  target.nextElementSibling.classList.remove("hidden");
+};
+const closeModal = () => {
+  modals.forEach((modal) => modal.classList.add("hidden"));
+};
+// EVENT LISTENER ON WORK SECTION--DISPLAY MODAL AND OVERLAY
+work.addEventListener("click", (e) => {
+  const targetedCard = e.target.closest(".work-card");
+  console.log(targetedCard);
+  displayModal(targetedCard);
+});
+//    EVENT LISTENER ON ESC KEY TO CLOSE MODAL
+document.addEventListener("keydown", () => {
+  closeModal();
+});
 // TYPING EFFECT
-(function type(
+const pause = (sec) => {
+  return new Promise((resolve) => setTimeout(resolve, sec * 1000));
+};
+(async function type(
   index = 0,
-  text = "Hello world. I am Andrew. Wordpress developer. "
+  text = "Hello world. I am Andrew, full stack web developer."
 ) {
   typeEffectParagraph.textContent += text[index++];
   if (index == text.length) {
     index = 0;
+    await pause(1);
     typeEffectParagraph.textContent = "";
   }
-  setTimeout(() => type(index), 200);
+  setTimeout(() => type(index), 150);
 })();
