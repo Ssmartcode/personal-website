@@ -253,6 +253,64 @@ a {
 #home .button-work {
   background-color: transparent;
 }
+/* CONTACT SECTION */
+#contact {
+  text-align: center;
+}
+#contact form {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+#contact .subject {
+  grid-column: 1 / span 2;
+}
+#contact .message {
+  grid-column: 1 / span 2;
+  resize: none;
+}
+#contact .submit {
+  grid-column: 1 / span 2;
+}
+
+.contact-info {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+.contact-info p {
+  font-size: 1.2rem;
+}
+.contact-group {
+  display: flex;
+  align-items: center;
+}
+.contact-group i {
+  margin: 0 5px;
+  color: var(--text-color);
+}
+.social-media i {
+  margin: 0 0.5rem;
+  border: 2px solid var(--text-color);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 7px;
+  transition: all 0.5s;
+  color: var(--text-color);
+}
+.social-media i:hover {
+  transform: scale(1.2);
+  background-color: var(--secondary-color);
+  color: #fff;
+}
 /* ABOUT */
 #about {
   display: flex;
@@ -340,64 +398,6 @@ a {
   border: 1px solid;
 }
 
-/* CONTACT SECTION */
-#contact {
-  text-align: center;
-}
-#contact form {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-#contact .subject {
-  grid-column: 1 / span 2;
-}
-#contact .message {
-  grid-column: 1 / span 2;
-  resize: none;
-}
-#contact .submit {
-  grid-column: 1 / span 2;
-}
-
-.contact-info {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  padding: 1rem;
-  background: rgba(0, 0, 0, 0.1);
-}
-.contact-info p {
-  font-size: 1.2rem;
-}
-.contact-group {
-  display: flex;
-  align-items: center;
-}
-.contact-group i {
-  margin: 0 5px;
-  color: var(--text-color);
-}
-.social-media i {
-  margin: 0 0.5rem;
-  border: 2px solid var(--text-color);
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 7px;
-  transition: all 0.5s;
-  color: var(--text-color);
-}
-.social-media i:hover {
-  transform: scale(1.2);
-  background-color: var(--secondary-color);
-  color: #fff;
-}
 /* ---FOOTER--- */
 footer {
   position: fixed;
