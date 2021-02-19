@@ -25,9 +25,15 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link
       rel="stylesheet"
+      href="css/tablet.css"
+      media="screen and (max-width:1200px)"
+    />
+    <link
+      rel="stylesheet"
       href="css/mobile.css"
       media="screen and (max-width:600px)"
     />
+
     <!-- FONT AWESOME -->
     <link
       rel="stylesheet"
@@ -36,7 +42,7 @@
       crossorigin="anonymous"
     />
     <!-- SCRIPT -->
-    <script defer src="test.js"></script>
+    <script defer src="./js/index.js" type="module"></script>
   </head>
   <body>
     <!-- !---SIDE BAR--- -->
@@ -190,19 +196,36 @@
 
     <!-- !---ABOUT SECTION--- -->
     <section id="about" class="about hidden section">
-      <img class="profile-image" src="./images/profile.png " alt="" />
-      <div class="text-content">
+      <div class="container">
+        <!-- ? who am i -->
         <h1>Who am i?</h1>
         <div class="line"></div>
-        <p>
-          My name is Andrei-Razvan Anca, and i am a 23 years old guy from
-          Romania(Europe). My passion is programming and web development. This
-          passion is now my job and my career. I strive to satisfy everyone with
-          my work and make everyone happy that they have colaborated with me. I
-          am really glad u have visited my website, and you are willing to read
-          the words i have typed here about me. I look forward to collaborating
-          with you!
-        </p>
+        <div class="about-row">
+          <img class="avatar-image" src="./images/avatar-image.png " alt="" />
+          <p class="text-content">
+            My name is Andrei-Razvan Anca, and i am a 23 years old guy from
+            Romania(Europe). My passion is programming and web development. This
+            passion is now my job and my career. I strive to satisfy everyone
+            with my work and make everyone happy that they have colaborated with
+            me. I am really glad u have visited my website, and you are willing
+            to read the words i have typed here about me. I look forward to
+            collaborating with you!
+          </p>
+        </div>
+        <!-- ? My skills -->
+        <h1>My skills</h1>
+        <div class="line"></div>
+        <div class="about-row">
+          <p class="text-content">
+            I can work with the following tehnologies:
+            <strong> HTML5</strong>,<strong> CSS3</strong> and
+            <strong>Bootstrap</strong>, <strong>JavaScript(ES6)</strong>,
+            <strong>React</strong>, NodeJs with <strong>Express</strong>,
+            <strong>PHP</strong> with <strong>Laravel</strong>. Check my work
+            page to see how I have used these tehnologies in my projects.
+          </p>
+          <img class="skills-image" src="./images/skills.png " alt="" />
+        </div>
       </div>
     </section>
     <!-- FOOTER BUT ON TOP --- ONLY WHEN WEBSITE IS IN WORK -->

@@ -1,0 +1,77 @@
+p {
+  font-size: 1.3rem;
+}
+h1 {
+  font-size: 2rem;
+}
+
+/* SIDEBAR */
+
+.home-icon::after,
+.contact-icon::after,
+.work-icon::after,
+.about-icon::after {
+  content: "";
+}
+/* HOME */
+#home .logo {
+  width: 350px;
+}
+#home p {
+  width: 100%;
+}
+#home p .type-effect::after {
+  display: none;
+}
+
+#work .container {
+  grid-template-columns: 1fr;
+}
+/* ABOUT */
+#about {
+  flex-flow: column;
+  padding: 4rem;
+}
+#about .container {
+  max-width: 100%;
+}
+#about .about-row {
+  flex-direction: column;
+}
+#about .avatar-image,
+#about .skills-image {
+  width: 350px;
+  height: 350px;
+  margin: 1rem 0;
+}
+@media (max-width: 900px) {
+  #home {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2rem;
+  }
+  #home .logo {
+    width: 400px;
+  }
+  #home h1 {
+    font-size: 2rem;
+  }
+  #home p .type-effect::after {
+    display: none;
+  }
+  #home p {
+    order: 2;
+    margin: 2rem 0;
+  }
+  #home .container {
+    order: 1;
+    display: block;
+  }
+  #home .button-contact,
+  .button-work {
+    width: 100%;
+    margin: 5px 0;
+  }
+} ;

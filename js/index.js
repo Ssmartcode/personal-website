@@ -1,4 +1,5 @@
 "use strict";
+import type from "./typing.js";
 // HTML SECTIONS AND NAVBAR ICONS
 const home = document.querySelector("#home");
 const contact = document.querySelector("#contact");
@@ -12,12 +13,14 @@ const aboutIcon = document.querySelector(".about-icon");
 
 const sideBar = document.querySelector(".side-bar");
 const modals = document.querySelectorAll(".modal");
-// FOOTER
+// !FOOTER -DISABLED
 // const footer = document.querySelector("footer");
 // const footerCross = document.querySelector(".cross");
 
 // HOME TYPING PARAGRAPH
 let typeEffectParagraph = document.querySelector(".type-effect");
+// TYPING FUNCTION
+type(typeEffectParagraph);
 
 const sections = {
   home: {
@@ -52,7 +55,7 @@ const scrollToTop = () => {
   });
 };
 
-// HIDE THE FOOTER
+// !DISABLED HIDE THE FOOTER
 // footerCross.addEventListener("click", () => (footer.style.display = "none"));
 
 // ADD SECONDARY COLOR TO THE ICON WHICH IS RELATED TO THE ACTIVE PAGE
@@ -77,7 +80,7 @@ sideBar.addEventListener("click", (e) => {
     switchPage(currentPage, sections[targetIcon]);
   }
 });
-// EVENT LLISTENER FOR CA BUTTONS
+// EVENT LLISTENER FOR CA BUTTONS(WORK ANC CONTACT)
 document
   .querySelector(".button-contact")
   .addEventListener("click", () => switchPage(currentPage, sections.contact));
@@ -85,7 +88,7 @@ document
   .querySelector(".button-work")
   .addEventListener("click", () => switchPage(currentPage, sections.work));
 
-// EVENT LISTENER FOR KEY DOWN AND UP
+// EVENT LISTENER FOR KEY DOWN AND UP TO SCROLL THROUGH PAGES
 document.addEventListener("keydown", (e) => {
   // ArrowUp
   // ArrowDown
@@ -98,12 +101,14 @@ document.addEventListener("keydown", (e) => {
     switchPage(currentPage, pages[pageIndex]);
   }
 });
-// EVENT LISTENER FOR CONTACT ME LINK ON TOP OF THE PAGE
+// !DISABLED EVENT LISTENER FOR CONTACT ME LINK ON TOP OF THE PAGE -
 // contactMeLink.addEventListener("click", () => {
 //   switchPage(currentPage, contact);
 //   toggleActivePage.call(contactIcon);
 // });
 //
+
+// HANDLE MODAL
 const displayModal = (target) => {
   target.nextElementSibling.classList.remove("hidden");
 };
@@ -116,23 +121,7 @@ work.addEventListener("click", (e) => {
   console.log(targetedCard);
   displayModal(targetedCard);
 });
-//    EVENT LISTENER ON ESC KEY TO CLOSE MODAL
+// EVENT LISTENER ON ESC KEY TO CLOSE MODAL
 document.addEventListener("keydown", () => {
   closeModal();
 });
-// TYPING EFFECT
-const pause = (sec) => {
-  return new Promise((resolve) => setTimeout(resolve, sec * 1000));
-};
-(async function type(
-  index = 0,
-  text = "Hello world. I am Andrew, full stack web developer."
-) {
-  typeEffectParagraph.textContent += text[index++];
-  if (index == text.length) {
-    index = 0;
-    await pause(1);
-    typeEffectParagraph.textContent = "";
-  }
-  setTimeout(() => type(index), 150);
-})();
