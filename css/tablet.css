@@ -25,7 +25,12 @@ h1 {
 }
 
 #work .container {
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-flow: column;
+}
+
+#work .work-card img {
+  height: auto;
 }
 /* ABOUT */
 #about {
@@ -45,6 +50,14 @@ h1 {
   margin: 1rem 0;
 }
 @media (max-width: 900px) {
+  /* sidebar */
+  .side-bar .logo {
+    width: 45px;
+  }
+  .side-bar ul li {
+    transform: scale(0.8);
+  }
+  /* home */
   #home {
     display: flex;
     flex-wrap: wrap;
@@ -74,4 +87,5 @@ h1 {
     width: 100%;
     margin: 5px 0;
   }
-} ;
+}
+/* about */

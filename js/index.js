@@ -13,9 +13,6 @@ const aboutIcon = document.querySelector(".about-icon");
 
 const sideBar = document.querySelector(".side-bar");
 const modals = document.querySelectorAll(".modal");
-// !FOOTER -DISABLED
-// const footer = document.querySelector("footer");
-// const footerCross = document.querySelector(".cross");
 
 // HOME TYPING PARAGRAPH
 let typeEffectParagraph = document.querySelector(".type-effect");
@@ -55,9 +52,6 @@ const scrollToTop = () => {
   });
 };
 
-// !DISABLED HIDE THE FOOTER
-// footerCross.addEventListener("click", () => (footer.style.display = "none"));
-
 // ADD SECONDARY COLOR TO THE ICON WHICH IS RELATED TO THE ACTIVE PAGE
 const toggleActivePage = function () {
   linkIcons.forEach((icon) => icon.classList.remove("active-page"));
@@ -65,11 +59,11 @@ const toggleActivePage = function () {
 };
 
 // SWITCH PAGE FUNCTION - HIDES CURRENT PAGE AND SHOWS THE NEXT ONE
-const switchPage = (current, next) => {
-  current.page.classList.toggle("hidden");
-  next.page.classList.toggle("hidden");
-  toggleActivePage.call(next);
-  currentPage = next;
+const switchPage = (nextPage) => {
+  currentPage.page.classList.toggle("hidden");
+  nextPage.page.classList.toggle("hidden");
+  toggleActivePage.call(nextPage);
+  currentPage = nextPage;
   // scrollToTop();
 };
 
@@ -77,36 +71,30 @@ const switchPage = (current, next) => {
 sideBar.addEventListener("click", (e) => {
   const targetIcon = e.target.getAttribute("name");
   if (targetIcon) {
-    switchPage(currentPage, sections[targetIcon]);
+    switchPage(sections[targetIcon]);
   }
 });
 // EVENT LLISTENER FOR CA BUTTONS(WORK ANC CONTACT)
 document
   .querySelector(".button-contact")
-  .addEventListener("click", () => switchPage(currentPage, sections.contact));
+  .addEventListener("click", () => switchPage(sections.contact));
 document
   .querySelector(".button-work")
-  .addEventListener("click", () => switchPage(currentPage, sections.work));
+  .addEventListener("click", () => switchPage(sections.work));
 
 // EVENT LISTENER FOR KEY DOWN AND UP TO SCROLL THROUGH PAGES
 document.addEventListener("keydown", (e) => {
   // ArrowUp
-  // ArrowDown
   if (e.key === "ArrowUp") {
     pageIndex === 0 ? (pageIndex = 3) : pageIndex--;
-    switchPage(currentPage, pages[pageIndex]);
+    switchPage(pages[pageIndex]);
   }
+  // ArrowDown
   if (e.key === "ArrowDown") {
     pageIndex === 3 ? (pageIndex = 0) : pageIndex++;
-    switchPage(currentPage, pages[pageIndex]);
+    switchPage(pages[pageIndex]);
   }
 });
-// !DISABLED EVENT LISTENER FOR CONTACT ME LINK ON TOP OF THE PAGE -
-// contactMeLink.addEventListener("click", () => {
-//   switchPage(currentPage, contact);
-//   toggleActivePage.call(contactIcon);
-// });
-//
 
 // HANDLE MODAL
 const displayModal = (target) => {
@@ -117,11 +105,15 @@ const closeModal = () => {
 };
 // EVENT LISTENER ON WORK SECTION--DISPLAY MODAL AND OVERLAY
 work.addEventListener("click", (e) => {
-  const targetedCard = e.target.closest(".work-card");
-  console.log(targetedCard);
-  displayModal(targetedCard);
+  if (e.target.closest(".work-card")) {
+    const targetedCard = e.target.closest(".work-card");
+    displayModal(targetedCard);
+  }
+  // close modal
+  if (e.target.closest(".close-modal")) {
+    closeModal();
+  }
 });
 // EVENT LISTENER ON ESC KEY TO CLOSE MODAL
-document.addEventListener("keydown", () => {
-  closeModal();
-});
+document.addEventListener("keydown", closeModal);
+// EVENT LISTENER ON CROSS TO CLOSE MODAL
