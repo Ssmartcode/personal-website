@@ -1,5 +1,6 @@
 "use strict";
 import type from "./typing.js";
+import validateForm from "./formvalidation.js";
 // HTML SECTIONS AND NAVBAR ICONS
 const home = document.querySelector("#home");
 const contact = document.querySelector("#contact");
@@ -42,15 +43,6 @@ const pages = [sections.home, sections.contact, sections.work, sections.about];
 
 let pageIndex = 0;
 let currentPage = sections.home;
-
-// SET OVERFLOW SCROLL FOR ABOUT
-// SCROLL TO TOP FUNCTION
-const scrollToTop = () => {
-  window.scroll({
-    top: 0,
-    behavior: "smooth",
-  });
-};
 
 // ADD SECONDARY COLOR TO THE ICON WHICH IS RELATED TO THE ACTIVE PAGE
 const toggleActivePage = function () {
@@ -95,7 +87,13 @@ document.addEventListener("keydown", (e) => {
     switchPage(pages[pageIndex]);
   }
 });
-
+// HANDLE SUBMIT OF CONTACT FORM
+document.querySelector("#contact form").addEventListener("submit", (e) => {
+  if (!validateForm()) {
+    e.preventDefault();
+    alert("Name, subject or message is too short");
+  }
+});
 // HANDLE MODAL
 const displayModal = (target) => {
   target.nextElementSibling.classList.remove("hidden");
