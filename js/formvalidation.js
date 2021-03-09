@@ -1,5 +1,6 @@
 const nameInput = document.querySelector(".name");
 const subjectInput = document.querySelector(".subject");
+const email = document.querySelector(".email");
 const messageInput = document.querySelector(".message");
 const checkLength = (elem, length) => {
   if (!elem.value) return;

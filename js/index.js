@@ -101,6 +101,12 @@ const displayModal = (target) => {
 const closeModal = () => {
   modals.forEach((modal) => modal.classList.add("hidden"));
 };
+// EVENT LISTENER ON DOCUMENT TO CLOSE MODAL
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".work-card") || e.target.closest(".modal-inner"))
+    return;
+  closeModal();
+});
 // EVENT LISTENER ON WORK SECTION--DISPLAY MODAL AND OVERLAY
 work.addEventListener("click", (e) => {
   if (e.target.closest(".work-card")) {
@@ -114,4 +120,3 @@ work.addEventListener("click", (e) => {
 });
 // EVENT LISTENER ON ESC KEY TO CLOSE MODAL
 document.addEventListener("keydown", closeModal);
-// EVENT LISTENER ON CROSS TO CLOSE MODAL

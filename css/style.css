@@ -5,8 +5,8 @@
 }
 :root {
   --main-color: #6deeff;
-  --main-transparent: rgba(109, 238, 255, 0.8);
   --secondary-color: #f05454;
+  --dark-transparent: rgba(105, 105, 105, 0.9);
   --text-color: #333;
 }
 
@@ -331,13 +331,16 @@ a {
   object-fit: cover;
   object-position: top;
 }
+#work .work-card h2 {
+  color: #f4f4f4;
+}
 #work .work-card p {
   font-size: 1.1rem;
-  color: #111;
+  color: #f4f4f4;
 }
 #work .card-overlay {
   position: absolute;
-  background-color: var(--main-transparent);
+  background-color: var(--dark-transparent);
   border-radius: 100%;
   transform: translate(-100%, -100%);
   transition: all 0.8s ease;
@@ -371,7 +374,7 @@ a {
   background-color: #f4f4f4;
   max-width: 700px;
   text-align: left;
-  box-shadow: 1px 10px 15px #666;
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding: 3rem;
   z-index: 100;
