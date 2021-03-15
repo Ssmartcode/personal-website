@@ -15,6 +15,9 @@ const aboutIcon = document.querySelector(".about-icon");
 const sideBar = document.querySelector(".side-bar");
 const modals = document.querySelectorAll(".modal");
 
+// body takes the height of section
+document.body.style.height = contact.offsetHeight;
+
 // HOME TYPING PARAGRAPH
 let typeEffectParagraph = document.querySelector(".type-effect");
 // TYPING FUNCTION
