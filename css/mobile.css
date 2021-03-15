@@ -75,6 +75,7 @@ h1 {
 #contact {
   text-align: center;
   width: 100%;
+  height: 100%;
 }
 #contact form {
   display: flex;
@@ -86,10 +87,11 @@ h1 {
 #contact textarea {
   text-align: center;
 }
+
 #contact .contact-info {
   width: 100%;
-  bottom: auto;
   margin-top: 1rem;
+  bottom: 0;
   justify-content: center;
 }
 

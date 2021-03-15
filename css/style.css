@@ -316,7 +316,7 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
   gap: 0.5rem;
-  grid-template-rows: repeat(2, 200px);
+  grid-template-rows: repeat(3, 200px);
   /* gap: 2rem; */
 }
 
@@ -341,9 +341,8 @@ a {
 #work .card-overlay {
   position: absolute;
   background-color: var(--dark-transparent);
-  border-radius: 100%;
   transform: translate(-100%, -100%);
-  transition: all 0.8s ease;
+  transition: all 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -355,7 +354,6 @@ a {
 #work .work-card:hover .card-overlay {
   visibility: visible;
   transform: translate(0, 0);
-  border-radius: 0;
 }
 #work .modal {
   position: fixed;
