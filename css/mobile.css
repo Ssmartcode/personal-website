@@ -10,6 +10,7 @@ h1 {
   font-size: 12rem;
 }
 .section {
+  top: 64px;
   left: 0;
   width: 100%;
   height: fit-content;
@@ -87,9 +88,6 @@ h1 {
 }
 
 #contact .contact-info {
-  position: absolute;
-  width: 100%;
-  bottom: -50px;
   justify-content: center;
 }
 

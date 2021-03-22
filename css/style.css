@@ -65,6 +65,9 @@ a {
 .section {
   position: absolute;
   left: 10vw;
+  bottom: 0;
+  top: 0;
+  right: 0;
   min-height: 100%;
   width: 90vw;
   padding: 2rem;
@@ -276,12 +279,9 @@ a {
 }
 
 .contact-info {
-  position: absolute;
   display: flex;
   justify-content: space-between;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  margin: -2rem -2rem 0;
   padding: 1rem;
   background: rgba(0, 0, 0, 0.1);
 }
@@ -469,8 +469,3 @@ a {
   }
 }
 /* MEDIA */
-@media (min-width: 1200px) {
-  /* body {
-    overflow: hidden;
-  } */
-}
