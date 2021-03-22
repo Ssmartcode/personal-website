@@ -18,6 +18,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #e9e9e9;
   background-image: url("../images/rocky-wall.png");
+  overflow-x: hidden;
 }
 textarea,
 input,
@@ -253,6 +254,7 @@ a {
 /* CONTACT SECTION */
 #contact {
   text-align: center;
+  height: 100%;
 }
 #contact form {
   max-width: 800px;
@@ -316,7 +318,7 @@ a {
 
 #work .container {
   max-width: 80%;
-  margin: 100px auto;
+  margin: 100px auto 0px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 3fr));
   gap: 0.5rem;
@@ -359,6 +361,8 @@ a {
   visibility: visible;
   transform: translate(0, 0);
 }
+
+/* MODAL */
 #work .modal {
   position: fixed;
   top: 0;
@@ -381,7 +385,6 @@ a {
   padding: 3rem;
   z-index: 100;
 }
-
 #work .modal p {
   margin: 2rem 0;
 }
@@ -395,13 +398,28 @@ a {
 #work .close-modal i {
   color: #333;
 }
-#work .modal .button {
-  padding: 0.25rem 0.75rem;
-  background-color: transparent;
-  border: 1px solid;
+#work .modal-links {
+  display: flex;
+  justify-content: start;
 }
-/* ABOUT */
+#work .modal .button-modal {
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.25rem 0.75rem;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+#work .modal .button-modal:hover {
+  background-color: var(--text-color);
+  color: #f4f4f4;
+}
+#work .modal-links .button-modal i {
+  margin-right: 0.2rem;
+  color: inherit;
+}
 
+/* ABOUT */
 #about h1 {
   text-align: center;
   margin: 1rem 0;
@@ -432,19 +450,6 @@ a {
   text-align: justify;
   line-height: 1.5;
 }
-/* !DISABLED---FOOTER--- */
-/* footer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 10vw;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.1);
-}
-footer a.contact-link {
-  text-decoration: none;
-  color: var(--secondary-color);
-} */
 
 /* ---ANIMATIONS--- */
 @keyframes highlight {
@@ -465,7 +470,7 @@ footer a.contact-link {
 }
 /* MEDIA */
 @media (min-width: 1200px) {
-  body {
+  /* body {
     overflow: hidden;
-  }
+  } */
 }
