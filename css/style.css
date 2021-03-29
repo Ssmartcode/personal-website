@@ -65,7 +65,6 @@ a {
 .section {
   position: absolute;
   left: 10vw;
-  bottom: 0;
   top: 0;
   right: 0;
   min-height: 100%;
@@ -409,6 +408,8 @@ a {
   padding: 0.25rem 0.75rem;
   font-size: 1.2rem;
   margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
 }
 #work .modal .button-modal:hover {
   background-color: var(--text-color);
@@ -469,3 +470,8 @@ a {
   }
 }
 /* MEDIA */
+@media screen and (max-width: 1800px) and (min-width: 1201px) {
+  #work .container {
+    grid-template-rows: repeat(4, 300px);
+  }
+} ;

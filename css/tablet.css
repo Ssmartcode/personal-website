@@ -27,11 +27,6 @@ h1 {
   display: none;
 }
 
-#work .container {
-  display: flex;
-  flex-flow: column;
-}
-
 #work .work-card img {
   height: auto;
 }
