@@ -26,7 +26,10 @@ h1 {
 #home p .type-effect::after {
   display: none;
 }
-
+#work .container {
+  display: flex;
+  flex-direction: column;
+}
 #work .work-card img {
   height: auto;
 }
