@@ -20,9 +20,11 @@ document.body.style.height = contact.offsetHeight;
 
 // HOME TYPING PARAGRAPH
 let typeEffectParagraph = document.querySelector(".type-effect");
+
 // TYPING FUNCTION
 type(typeEffectParagraph);
 
+// OBJECT WITH SECTIONS AND THEIR ICON/PAGE
 const sections = {
   home: {
     icon: homeIcon,
@@ -44,6 +46,7 @@ const sections = {
 const linkIcons = [aboutIcon, workIcon, homeIcon, contactIcon];
 const pages = [sections.home, sections.contact, sections.work, sections.about];
 
+// FIRST PAGE(HOME) HAS INDEX 0
 let pageIndex = 0;
 let currentPage = sections.home;
 
@@ -59,7 +62,13 @@ const switchPage = (nextPage) => {
   nextPage.page.classList.toggle("hidden");
   toggleActivePage.call(nextPage);
   currentPage = nextPage;
-  // scrollToTop();
+  // LAZY LOAD IMAGES WHEN ON WORK PAGE
+  if (currentPage === sections.work) {
+    document.querySelectorAll(".work-card img").forEach((img) => {
+      if (img.src) return;
+      img.src = img.dataset.src;
+    });
+  }
 };
 
 // EVENT LISTENER ON SIDE-BAR
@@ -68,7 +77,9 @@ sideBar.addEventListener("click", (e) => {
   if (targetIcon) {
     switchPage(sections[targetIcon]);
   }
+  console.log(pageIndex);
 });
+
 // EVENT LLISTENER FOR CA BUTTONS(WORK ANC CONTACT)
 document
   .querySelector(".button-contact")
@@ -97,6 +108,7 @@ document.querySelector("#contact form").addEventListener("submit", (e) => {
     alert("Name, subject or message is too short");
   }
 });
+
 // HANDLE MODAL
 const displayModal = (target) => {
   target.nextElementSibling.classList.remove("hidden");
@@ -104,12 +116,14 @@ const displayModal = (target) => {
 const closeModal = () => {
   modals.forEach((modal) => modal.classList.add("hidden"));
 };
+
 // EVENT LISTENER ON DOCUMENT TO CLOSE MODAL
 document.addEventListener("click", (e) => {
   if (e.target.closest(".work-card") || e.target.closest(".modal-inner"))
     return;
   closeModal();
 });
+
 // EVENT LISTENER ON WORK SECTION--DISPLAY MODAL AND OVERLAY
 work.addEventListener("click", (e) => {
   if (e.target.closest(".work-card")) {
