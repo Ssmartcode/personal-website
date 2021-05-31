@@ -1,0 +1,191 @@
+include mixins/myWork-card
+
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='description' content='Andrei Razvan Web Developer and Wordpress Developer. Designing websites. Freelancer on Fiverr. Full stack developer')
+  meta(name='keywords' content='andrei razvan, web developer, web designer, wordpress, wordpress developer, hire website developer, fiverr web developer, react developer, andrei-razvan ')
+  title AR web development-Andrei-Razvan
+
+  // FAV ICON
+  link(rel='shortcut icon' href='./images/favicon.png' type='image/x-icon')
+  // FONTS
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap' rel='stylesheet')
+  link(href='  https://fonts.googleapis.com/css2?family=Bangers&family=Playfair+Display+SC&family=Prata&family=Yusei+Magic&display=swap' rel='stylesheet')
+  // STYLESHEET
+  link(rel='stylesheet' href='./css/style.css')
+  link(rel='stylesheet' href='css/tablet.css' media='screen and (max-width:1200px)')
+  link(rel='stylesheet' href='css/mobile.css' media='screen and (max-width:600px)')
+  // FONT AWESOME
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.2/css/all.css' integrity='sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu' crossorigin='anonymous')
+  // SCRIPT
+  script(defer='' src='./js/index.js' type='module')
+
+//- ---SIDE BAR---
+.side-bar
+  .logo
+    img(src='./images/logo-sidebar.png' alt='')
+  ul
+    li
+      i.fas.fa-home.fa-2x.home-icon.active-page(name='home')
+    li
+      i.fas.fa-envelope.fa-2x.contact-icon(name='contact')
+    li
+      i.fas.fa-image.fa-2x.work-icon(name='work')
+    li
+      i.fas.fa-address-card.fa-2x.about-icon(name='about')
+
+//- ---HOME SECTION---
+section#home.section
+  .container
+    h1
+      | FREELANCE
+      br
+      | WEB DEVELOPER.
+    button.button.button-contact
+      span Contact me
+    button.button.button-work
+      span My work
+  img.logo(src='./images/logo2.png' alt='')
+  p
+    | &lt;p&gt; 
+    span.type-effect
+    |  &lt;/p&gt;
+
+//- !---CONTACT SECTION---
+section#contact.hidden.section
+  .contact-info
+    .contact-group
+      i.fas.fa-envelope-open
+      p razvan.anca.andrei@gmail.com
+    .social-media
+      i.fab.fa-facebook
+      i.fab.fa-linkedin
+      i.fab.fa-twitter
+  h1 Contact me
+  .line
+  form(name='contact' method='POST' data-netlify='true')
+    input.name.p-1.input-style(type='text' name='name' placeholder='Name:')
+    input.email.p-1.input-style(type='email' name='email' required='' placeholder='E-mail address:')
+    input.subject.p-1.input-style(type='text' name='subject' placeholder='Subject:')
+    textarea.message.p-1.input-style(cols='10' rows='8' name='message' placeholder='Message:')
+    button.button.submit(type='submit')
+      span Send
+
+//- !---WORK SECTION---
+section#work.work.hidden.section
+  h1 See my work
+  .line
+  .container
+    //- ? Driving school website
+    +work-card("driving",
+                "./images/driving.png",
+                "Driving school",
+                "Presentation website for drving school",
+                "Driving school presentation website",
+                "Awesome Driving is a fictional driving school. Website was built to present the services that a driving school is supposed to  offer.", 
+                "https://driving.andrei-razvan.com", 
+                "https://github.com/Ssmartcode/Driving-School")
+
+    //-  I am foodie app  
+    +work-card("foodie",
+                "./images/foodie.png",
+                "I am foodie",
+                "Find recipe by ingredient or name",
+                "I am foodie web app",
+                "Search for a recipe by ingredients or by name. You can bookmark your favorite recipes and come back later for them.", 
+                "https://foodapp.andrei-razvan.com", 
+                "https://github.com/Ssmartcode?tab=repositories")
+
+    //- encrypt project
+    +work-card("encrypt",
+                "./images/criptare.png",
+                "Encrypt app",
+                "Encrytion application with xor and caesar",
+                "Encryption app which uses xor cipher and caesar cipher",
+                "XOR cipher and caesar cipher are pretty simple to understand. You can find more about these. Go and check this ap now.", 
+                "https://xor.andrei-razvan.com", 
+                "https://github.com/Ssmartcode?tab=repositories")          
+    
+    //- game project
+    +work-card("game",
+                "./images/game.png",
+                "Game",
+                "Computer vs player game",
+                "Computer vs player game",
+                "This is a game in which you play against the computer. First to get a score of 50 or more wins the game", 
+                "https://game.andrei-razvan.com", 
+                "https://github.com/Ssmartcode?tab=repositories")   
+    
+    //- ? Contact cards
+    +work-card("contacts",
+                "./images/contacts.png",
+                "Contacts cards",
+                "Save your contacts",
+                "Contacts cards",
+                "Save your contacts; phone number, e-mail address, personal website. You can add a image to recognize them faster", 
+                "https://contacts.andrei-razvan.com", 
+                "https://github.com/Ssmartcode?tab=repositories")  
+
+    //-  TODO list
+    +work-card("todo",
+                "./images/todo.png",
+                "To do list",
+                "Create a to do list",
+                "Create a to do list",
+                "Save your most important tasks. Put them in 3 categories: High, Medium or Low. Come back any time to see them. You can search for them by using keywords", 
+                "https://todo.andrei-razvan.com", 
+                "https://github.com/Ssmartcode?tab=repositories")  
+
+    //- ? FLASH NEWS
+    +work-card("FlashNews",
+                "./images/articlesfactory.png",
+                "Articles portal",
+                "Create and read articles",
+                "Create and read articles",
+                "Create, Read, Update and Delete articles using the admin panel (create admin or author account to access it). There is a reader account with which you can read all articles. ", 
+                "https://articles-factory.herokuapp.com/", 
+                "https://github.com/Ssmartcode?tab=repositories")  
+    
+
+//- !---ABOUT SECTION---
+section#about.about.hidden.section
+  .container
+    // ? who am i
+    h1 Who am i?
+    .line
+    .about-row
+      img.avatar-image(src='./images/avatar-image.png ' alt='')
+      p.text-content
+        | My name is Andrei-Razvan Anca, and i am a 23 years old guy from
+        | Romania(Europe). My passion is programming and web development. This
+        | passion is now my job and my career. I strive to satisfy everyone
+        | with my work and make everyone happy that they have colaborated with
+        | me. I am really glad u have visited my website, and you are willing
+        | to read the words i have typed here about me. I look forward to
+        | collaborating with you!
+    // ? My skills
+    h1 My skills
+    .line
+    .about-row
+      p.text-content
+        | I can work with the following tehnologies:
+        strong  HTML5
+        | , 
+        strong  CSS3
+        | and 
+        strong Bootstrap
+        | , 
+        strong JavaScript(ES6)
+        | , 
+        strong React
+        | , NodeJs with 
+        strong Express
+        | , 
+        strong PHP
+        |  with 
+        strong Laravel
+        | . Check my work
+        |             page to see how I have used these tehnologies in my projects.
+      img.skills-image(src='./images/skills.png ' alt='')

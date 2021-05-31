@@ -1,0 +1,18 @@
+mixin work-card(name,img,workCardTitle, workCardParagraph, modalTitle, modalParagraph, link, github)
+  .work-card(name=name) 
+    img(data-src=img alt='My project image. Requires javaScript')
+    .card-overlay
+      h2=workCardTitle
+      p=workCardParagraph
+  .modal.hidden
+    .modal-inner
+      .close-modal
+        i.fas.fa-times
+      h2=modalTitle
+      p=modalParagraph
+      .modal-links
+        a.button-modal(href=link)
+          span Check it
+        a.button-modal(href=github)
+          i.fab.fa-github
+          span Github repository
