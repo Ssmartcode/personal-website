@@ -1,6 +1,6 @@
 "use strict";
 import type from "./typing.js";
-import validateForm from "./formvalidation.js";
+import { validateForm, clearErrors } from "./formvalidation.js";
 // HTML SECTIONS AND NAVBAR ICONS
 const home = document.querySelector("#home");
 const contact = document.querySelector("#contact");
@@ -115,6 +115,7 @@ document.querySelector("#contact form").addEventListener("submit", (e) => {
     })
       .then(() => {
         document.querySelector(".contact-modal").classList.remove("hidden");
+        clearErrors();
         myForm.reset();
       })
       .catch((error) => alert(error));
@@ -136,7 +137,7 @@ document.addEventListener("click", (e) => {
   closeModal();
 });
 
-// CLOSE MODAL BUTTON ACTION
+// EVENT LISTENER ON CLOSE MODAL CROSS
 document.addEventListener("click", (e) => {
   if (e.target.closest(".close-modal")) closeModal();
 });

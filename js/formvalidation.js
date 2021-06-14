@@ -9,6 +9,10 @@ const addMessage = (elem, message) => {
   elem.classList.add("input-invalid");
   elem.nextElementSibling.innerText = message;
 };
+const clearMessage = (elem) => {
+  elem.classList.remove("input-invalid");
+  elem.nextElementSibling.innerText = "";
+};
 
 // check if all inputs are valid
 const validateForm = () => {
@@ -31,6 +35,7 @@ const validateForm = () => {
     ),
   ];
 
+  // return a list with inputs that failed the validtation test
   const invalidInputs = inputs.filter((input) => input !== true);
 
   if (invalidInputs.length === 0) return true;
@@ -38,4 +43,13 @@ const validateForm = () => {
   invalidInputs.forEach((input) => addMessage(input.elem, input.message));
 };
 
-export default validateForm;
+const clearErrors = () => {
+  const inputs = [
+    ...document.querySelectorAll("input"),
+    ...document.querySelectorAll("textarea"),
+  ];
+  console.log(inputs);
+  inputs.forEach((input) => clearMessage(input));
+};
+
+export { validateForm, clearErrors };
