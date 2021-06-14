@@ -101,11 +101,23 @@ document.addEventListener("keydown", (e) => {
     switchPage(pages[pageIndex]);
   }
 });
+
 // HANDLE SUBMIT OF CONTACT FORM
 document.querySelector("#contact form").addEventListener("submit", (e) => {
-  if (!validateForm()) {
-    e.preventDefault();
-    alert("Name, subject or message is too short");
+  e.preventDefault();
+  let myForm = e.target;
+  let formData = new FormData(myForm);
+  if (validateForm()) {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        document.querySelector(".contact-modal").classList.remove("hidden");
+        myForm.reset();
+      })
+      .catch((error) => alert(error));
   }
 });
 
@@ -124,15 +136,16 @@ document.addEventListener("click", (e) => {
   closeModal();
 });
 
+// CLOSE MODAL BUTTON ACTION
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".close-modal")) closeModal();
+});
+
 // EVENT LISTENER ON WORK SECTION--DISPLAY MODAL AND OVERLAY
 work.addEventListener("click", (e) => {
   if (e.target.closest(".work-card")) {
     const targetedCard = e.target.closest(".work-card");
     displayModal(targetedCard);
-  }
-  // close modal
-  if (e.target.closest(".close-modal")) {
-    closeModal();
   }
 });
 // EVENT LISTENER ON ESC KEY TO CLOSE MODAL

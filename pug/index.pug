@@ -5,18 +5,21 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   meta(name='description' content='Andrei Razvan Web Developer and Wordpress Developer. Designing websites. Freelancer on Fiverr. Full stack developer')
   meta(name='keywords' content='andrei razvan, web developer, web designer, wordpress, wordpress developer, hire website developer, fiverr web developer, react developer, andrei-razvan ')
-  title Web development-Andrei-Razvan
+  title Web development - Andrei-Razvan
 
   // FAV ICON
   link(rel='shortcut icon' href='./images/favicon.png' type='image/x-icon')
+  
   // FONTS
   link(rel='preconnect' href='https://fonts.gstatic.com')
   link(href='https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap' rel='stylesheet')
   link(href='  https://fonts.googleapis.com/css2?family=Bangers&family=Playfair+Display+SC&family=Prata&family=Yusei+Magic&display=swap' rel='stylesheet')
+  
   // STYLESHEET
   link(rel='stylesheet' href='./css/style.css')
   link(rel='stylesheet' href='css/tablet.css' media='screen and (max-width:1200px)')
   link(rel='stylesheet' href='css/mobile.css' media='screen and (max-width:600px)')
+
   // FONT AWESOME
   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.2/css/all.css' integrity='sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu' crossorigin='anonymous')
   // SCRIPT
@@ -66,12 +69,28 @@ section#contact.hidden.section
   h1 Contact me
   .line
   form(name='contact' method='POST' data-netlify='true')
-    input.name.p-1.input-style(type='text' name='name' placeholder='Name:')
-    input.email.p-1.input-style(type='email' name='email' required='' placeholder='E-mail address:')
-    input.subject.p-1.input-style(type='text' name='subject' placeholder='Subject:')
-    textarea.message.p-1.input-style(cols='10' rows='8' name='message' placeholder='Message:')
+    .input-group.name
+      input.p-1.input-style(type='text' name='name' placeholder='Name:')
+      .input-error
+    .input-group.email
+      input.p-1.input-style(type='email' name='email' required='' placeholder='E-mail address:')
+      .input-error
+    .input-group.subject
+      input.p-1.input-style(type='text' name='subject' placeholder='Subject:')
+      .input-error
+    .input-group.message  
+      textarea.p-1.input-style(cols='10' rows='8' name='message' placeholder='Message:')
+      .input-error
     button.button.submit(type='submit')
       span Send
+  .modal.contact-modal.hidden
+    .modal-inner
+      .close-modal
+        i.fas.fa-times
+      h2 Form submitted
+      p Thank you for contacting me. I will get in touch with you soon. Have a great day!
+      .modal-links
+        span Okay
 
 //- !---WORK SECTION---
 section#work.work.hidden.section

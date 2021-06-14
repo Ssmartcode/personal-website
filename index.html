@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Andrei Razvan Web Developer and Wordpress Developer. Designing websites. Freelancer on Fiverr. Full stack developer"/>
   <meta name="keywords" content="andrei razvan, web developer, web designer, wordpress, wordpress developer, hire website developer, fiverr web developer, react developer, andrei-razvan "/>
-  <title>AR web development-Andrei-Razvan</title>
+  <title>Web development - Andrei-Razvan</title>
   <!-- FAV ICON-->
   <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon"/>
   <!-- FONTS-->
@@ -47,12 +47,32 @@
   <h1>Contact me</h1>
   <div class="line"></div>
   <form name="contact" method="POST" data-netlify="true">
-    <input class="name p-1 input-style" type="text" name="name" placeholder="Name:"/>
-    <input class="email p-1 input-style" type="email" name="email" required="" placeholder="E-mail address:"/>
-    <input class="subject p-1 input-style" type="text" name="subject" placeholder="Subject:"/>
-    <textarea class="message p-1 input-style" cols="10" rows="8" name="message" placeholder="Message:"></textarea>
+    <div class="input-group name">
+      <input class="p-1 input-style" type="text" name="name" placeholder="Name:"/>
+      <div class="input-error"></div>
+    </div>
+    <div class="input-group email">
+      <input class="p-1 input-style" type="email" name="email" required="" placeholder="E-mail address:"/>
+      <div class="input-error"></div>
+    </div>
+    <div class="input-group subject">
+      <input class="p-1 input-style" type="text" name="subject" placeholder="Subject:"/>
+      <div class="input-error"></div>
+    </div>
+    <div class="input-group message"> 
+      <textarea class="p-1 input-style" cols="10" rows="8" name="message" placeholder="Message:"></textarea>
+      <div class="input-error"></div>
+    </div>
     <button class="button submit" type="submit"><span>Send</span></button>
   </form>
+  <div class="modal contact-modal hidden">
+    <div class="modal-inner">
+      <div class="close-modal"><i class="fas fa-times"></i></div>
+      <h2>Form submitted</h2>
+      <p>Thank you for contacting me. I will get in touch with you soon. Have a great day!</p>
+      <div class="modal-links"><span>Okay</span></div>
+    </div>
+  </div>
 </section>
 <section class="work hidden section" id="work">
   <h1>See my work</h1>

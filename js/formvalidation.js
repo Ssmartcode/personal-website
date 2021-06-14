@@ -1,19 +1,41 @@
-const nameInput = document.querySelector(".name");
-const subjectInput = document.querySelector(".subject");
-const messageInput = document.querySelector(".message");
-const checkLength = (elem, length) => {
-  if (!elem.value) return;
-  if (elem.value.length < length) return;
-  return true;
+// input validators
+const checkLength = (elem, length, message) => {
+  if (elem.value.length >= length) return true;
+  return { elem, message };
 };
 
-const validateForm = () => {
-  if (
-    checkLength(nameInput, 2) &&
-    checkLength(subjectInput, 3) &&
-    checkLength(messageInput, 10)
-  )
-    return true;
-  return false;
+// add message under input if input is invalid
+const addMessage = (elem, message) => {
+  elem.classList.add("input-invalid");
+  elem.nextElementSibling.innerText = message;
 };
+
+// check if all inputs are valid
+const validateForm = () => {
+  const inputs = [
+    checkLength(
+      document.querySelector(".name input"),
+      3,
+      "Name should be at least 3 characters long"
+    ),
+    checkLength(
+      document.querySelector(".subject input"),
+      5,
+      "Subject should be at least 5 characters long"
+    ),
+
+    checkLength(
+      document.querySelector(".message textarea"),
+      10,
+      "Message should be at least 10 characters long"
+    ),
+  ];
+
+  const invalidInputs = inputs.filter((input) => input !== true);
+
+  if (invalidInputs.length === 0) return true;
+
+  invalidInputs.forEach((input) => addMessage(input.elem, input.message));
+};
+
 export default validateForm;
