@@ -45,7 +45,7 @@ const validateForm = () => {
 
 const clearErrors = () => {
   const inputs = [
-    ...document.querySelectorAll("input"),
+    ...document.querySelectorAll(".input-group input"),
     ...document.querySelectorAll("textarea"),
   ];
   console.log(inputs);
