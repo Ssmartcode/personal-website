@@ -11,7 +11,7 @@ const addMessage = (elem, message) => {
 };
 const clearMessage = (elem) => {
   elem.classList.remove("input-invalid");
-  elem.nextElementSibling.innerText = "";
+  if (elem.nextElementSibling) elem.nextElementSibling.innerText = "";
 };
 
 // check if all inputs are valid
