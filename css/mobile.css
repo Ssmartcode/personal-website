@@ -99,6 +99,12 @@ h1 {
 .modal-inner {
   width: 80%;
 }
+.modal-links {
+  flex-direction: column;
+}
+.modal-links .button-modal:nth-child(1) {
+  margin-bottom: 0.75rem;
+}
 
 /* ABOUT */
 #about {
