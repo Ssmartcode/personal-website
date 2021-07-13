@@ -25,6 +25,8 @@ head
   // SCRIPT
   script(defer='' src='./js/index.js' type='module')
 
+noscript 
+  h1 Please enable JavaScript to use my website!
 //- ---SIDE BAR---
 .side-bar
   .logo
@@ -103,6 +105,7 @@ section#work.work.hidden.section
                 "Driving school presentation website",
                 "Awesome Driving is a fictional driving school. Website was built to present the services that a driving school is supposed to  offer.", 
                 "https://driving.andrei-razvan.com", 
+                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"}],
                 "https://github.com/Ssmartcode/Driving-School")
 
      //- ? ArticlesFactory
@@ -113,7 +116,7 @@ section#work.work.hidden.section
                 "Create and read articles",
                 "Create, Read, Update and Delete articles using the admin panel (create admin or author account to access it). There is a reader account with which you can read all articles. ", 
                 "https://articles-factory.herokuapp.com/", 
-                "https://github.com/Ssmartcode?tab=repositories")  
+                 [{name:"PUG", img:"./images/pug.png"},{name:"CSS", img:"./images/css.png"},{name:"nodeJs", img:"./images/node.png"},{name:"MongoDB", img:"./images/mongodb.png"}])
     
     //- ? Banking Application
     +work-card("BankingApplication",
@@ -123,6 +126,7 @@ section#work.work.hidden.section
                 "Web application for internet banking",
                 "With one user account you can open a maximum of 5 bank accounts in 3 currencies(ron, usd and eur). Deposit money, Withdraw and Transfer money to anyone., ", 
                 "https://banking.andrei-razvan.com/", 
+                [{name:"React", img:"./images/react.png"},{name:"nodeJs", img:"./images/node.png"} ,{name:"MongoDB", img:"./images/mongodb.png"}],
                 "https://github.com/Ssmartcode?tab=repositories") 
                 
     //- ? Tourism website
@@ -133,6 +137,7 @@ section#work.work.hidden.section
                 "Tourism offers website",
                 "Users can create offers for others or they can buy already made packages for city breaks or excursions.", 
                 "https://tourism.andrei-razvan.com/", 
+                [{name:"React", img:"./images/react.png"},{name:"nodeJs", img:"./images/node.png"} ,{name:"MongoDB", img:"./images/mongodb.png"}],
                 "https://github.com/Ssmartcode?tab=repositories")  
 
     //-  TODO list
@@ -143,6 +148,7 @@ section#work.work.hidden.section
                 "Create a to do list",
                 "Save your most important tasks. Put them in 3 categories: High, Medium or Low. Come back any time to see them. You can search for them by using keywords", 
                 "https://todo.andrei-razvan.com", 
+                [{name:"React", img:"./images/react.png"}, {name:"CSS", img:"./images/css.png"}],
                 "https://github.com/Ssmartcode?tab=repositories")  
     //-  I am foodie app  
     +work-card("foodie",
@@ -152,6 +158,7 @@ section#work.work.hidden.section
                 "I am foodie web app",
                 "Search for a recipe by ingredients or by name. You can bookmark your favorite recipes and come back later for them.", 
                 "https://foodapp.andrei-razvan.com", 
+                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"}],
                 "https://github.com/Ssmartcode?tab=repositories")
 
     //- ? Contact cards
@@ -162,17 +169,8 @@ section#work.work.hidden.section
                 "Contacts cards",
                 "Save your contacts; phone number, e-mail address, personal website. You can add a image to recognize them faster", 
                 "https://contacts.andrei-razvan.com", 
+                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"},{name:"nodeJs", img:"./images/node.png"}],
                 "https://github.com/Ssmartcode?tab=repositories")  
-
-    //- encrypt project
-    +work-card("encrypt",
-                "./images/criptare.png",
-                "Encrypt app",
-                "Encrytion application with xor and caesar",
-                "Encryption app which uses xor cipher and caesar cipher",
-                "XOR cipher and caesar cipher are pretty simple to understand. You can find more about these. Go and check this ap now.", 
-                "https://xor.andrei-razvan.com", 
-                "https://github.com/Ssmartcode?tab=repositories")          
     
     //- game project
     +work-card("game",
@@ -182,13 +180,20 @@ section#work.work.hidden.section
                 "Computer vs player game",
                 "This is a game in which you play against the computer. First to get a score of 50 or more wins the game", 
                 "https://game.andrei-razvan.com", 
-                "https://github.com/Ssmartcode?tab=repositories")   
+                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"}],  
+                "https://github.com/Ssmartcode?tab=repositories")  
+                
+    //- encrypt project
+    +work-card("encrypt",
+                "./images/criptare.png",
+                "Encrypt app",
+                "Encrytion application with xor and caesar",
+                "Encryption app which uses xor cipher and caesar cipher",
+                "XOR cipher and caesar cipher are pretty simple to understand. You can find more about these. Go and check this ap now.", 
+                "https://xor.andrei-razvan.com", 
+                [{name:"React", img:"./images/react.png"}],
+                "https://github.com/Ssmartcode?tab=repositories")    
     
-
-
-
-
-
 //- !---ABOUT SECTION---
 section#about.about.hidden.section
   .container

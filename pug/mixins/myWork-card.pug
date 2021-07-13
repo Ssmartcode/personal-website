@@ -1,4 +1,4 @@
-mixin work-card(name,img,workCardTitle, workCardParagraph, modalTitle, modalParagraph, link, github)
+mixin work-card(name,img,workCardTitle, workCardParagraph, modalTitle, modalParagraph, link, technologies, github)
   .work-card(name=name) 
     img(data-src=img alt='My project image. Requires javaScript')
     .card-overlay
@@ -10,6 +10,11 @@ mixin work-card(name,img,workCardTitle, workCardParagraph, modalTitle, modalPara
         i.fas.fa-times
       h2=modalTitle
       p=modalParagraph
+      .technologies-row 
+        p Technologies used: &nbsp; 
+        each technology in technologies 
+          img.tech-icon(class="technology-icon" src=technology.img, alt=technology.name)
+          span.tech-name=technology.name
       .modal-links
         a.button-modal(href=link)
           span Check it

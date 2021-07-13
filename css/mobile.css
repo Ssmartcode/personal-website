@@ -102,6 +102,9 @@ h1 {
 .modal-links {
   flex-direction: column;
 }
+.modal-links .button-modal span {
+  margin: 0 auto;
+}
 .modal-links .button-modal:nth-child(1) {
   margin-bottom: 0.75rem;
 }
@@ -143,4 +146,17 @@ h1 {
   }
 }
 @media screen and (min-width: 1201px) and (max-width: 1700px) {
+}
+@media screen and (max-width: 650px) {
+  .modal-inner .technologies-row {
+    flex-direction: column;
+  }
+  .technologies-row p {
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+  .technologies-row .tech-name {
+    margin-bottom: 1rem;
+    margin-right: 0;
+  }
 } ;
