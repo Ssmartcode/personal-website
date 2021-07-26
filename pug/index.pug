@@ -48,10 +48,11 @@ section#home.section
       | FREELANCE
       br
       | WEB DEVELOPER.
-    button.button.button-contact
-      span Contact me
-    button.button.button-work
-      span My work
+    .buttons-row
+      button.button.button-contact
+        span Contact me
+      button.button.button-work
+        span My work
   img.logo(src='./images/logo.png' alt='')
   p
     | &lt;p&gt; 
@@ -92,44 +93,12 @@ section#contact.hidden.section
       h2 Form submitted
       p Thank you for contacting me. I will get in touch with you soon. Have a great day!
 
-//- !---WORK SECTION---
+//- ---WORK SECTION---
 section#work.work.hidden.section
   h1 See my work
   .line
   .container
-    //- ? Driving school website
-    +work-card("driving",
-                "./images/driving.png",
-                "Driving school",
-                "Presentation website for drving school",
-                "Driving school presentation website",
-                "Awesome Driving is a fictional driving school. Website was built to present the services that a driving school is supposed to  offer.", 
-                "https://driving.andrei-razvan.com", 
-                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"}],
-                "https://github.com/Ssmartcode/Driving-School")
-
-     //- ? ArticlesFactory
-    +work-card("ArticlesFactory",
-                "./images/articlesfactory.png",
-                "Articles portal",
-                "Create and read articles",
-                "Create and read articles",
-                "Create, Read, Update and Delete articles using the admin panel (create admin or author account to access it). There is a reader account with which you can read all articles. ", 
-                "https://articles-factory.herokuapp.com/", 
-                 [{name:"PUG", img:"./images/pug.png"},{name:"CSS", img:"./images/css.png"},{name:"nodeJs", img:"./images/node.png"},{name:"MongoDB", img:"./images/mongodb.png"}])
-    
-    //- ? Banking Application
-    +work-card("BankingApplication",
-                "./images/internetBanking.png",
-                "Internet Banking",
-                "Web application for internet banking",
-                "Web application for internet banking",
-                "With one user account you can open a maximum of 5 bank accounts in 3 currencies(ron, usd and eur). Deposit money, Withdraw and Transfer money to anyone., ", 
-                "https://banking.andrei-razvan.com/", 
-                [{name:"React", img:"./images/react.png"},{name:"nodeJs", img:"./images/node.png"} ,{name:"MongoDB", img:"./images/mongodb.png"}],
-                "https://github.com/Ssmartcode?tab=repositories") 
-                
-    //- ? Tourism website
+    //- Tourism website
     +work-card("TourismWebsite",
                 "./images/tourismWebsite.png",
                 "Tourism offers website",
@@ -139,6 +108,60 @@ section#work.work.hidden.section
                 "https://tourism.andrei-razvan.com/", 
                 [{name:"React", img:"./images/react.png"},{name:"nodeJs", img:"./images/node.png"} ,{name:"MongoDB", img:"./images/mongodb.png"}],
                 "https://github.com/Ssmartcode?tab=repositories")  
+                
+    //- ArticlesFactory
+    +work-card("ArticlesFactory",
+                "./images/articlesfactory.png",
+                "Articles portal",
+                "Create and read articles",
+                "Create and read articles",
+                "Create, Read, Update and Delete articles using the admin panel (create admin or author account to access it). There is a reader account with which you can read all articles. ", 
+                "https://articles-factory.herokuapp.com/", 
+                 [{name:"PUG", img:"./images/pug.png"},{name:"CSS", img:"./images/css.png"},{name:"nodeJs", img:"./images/node.png"},{name:"MongoDB", img:"./images/mongodb.png"}])
+
+    //- Driving school website
+    +work-card("driving",
+                "./images/driving.png",
+                "Driving school",
+                "Presentation website for drving school",
+                "Driving school presentation website",
+                "Awesome Driving is a fictional driving school. Website was built to present the services that a driving school is supposed to  offer.", 
+                "https://driving.andrei-razvan.com", 
+                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"}],
+                "https://github.com/Ssmartcode/Driving-School")
+    
+    //- Banking Application
+    +work-card("BankingApplication",
+                "./images/internetBanking.png",
+                "Internet Banking",
+                "Web application for internet banking",
+                "Web application for internet banking",
+                "With one user account you can open a maximum of 5 bank accounts in 3 currencies(ron, usd and eur). Deposit money, Withdraw and Transfer money to anyone., ", 
+                "https://banking.andrei-razvan.com/", 
+                [{name:"React", img:"./images/react.png"},{name:"nodeJs", img:"./images/node.png"} ,{name:"MongoDB", img:"./images/mongodb.png"}],
+                "https://github.com/Ssmartcode?tab=repositories") 
+
+    //- Contact cards
+    +work-card("contacts",
+                "./images/contacts.png",
+                "Contacts cards",
+                "Save your contacts",
+                "Contacts cards",
+                "Save your contacts; phone number, e-mail address, personal website. You can add a image to recognize them faster", 
+                "https://contacts.andrei-razvan.com", 
+                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"},{name:"nodeJs", img:"./images/node.png"}],
+                "https://github.com/Ssmartcode?tab=repositories")  
+
+    //- I am foodie app  
+    +work-card("foodie",
+                "./images/foodie.png",
+                "I am foodie",
+                "Find recipe by ingredient or name",
+                "I am foodie web app",
+                "Search for a recipe by ingredients or by name. You can bookmark your favorite recipes and come back later for them.", 
+                "https://foodapp.andrei-razvan.com", 
+                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"}],
+                "https://github.com/Ssmartcode?tab=repositories")
 
     //-  TODO list
     +work-card("todo",
@@ -150,28 +173,7 @@ section#work.work.hidden.section
                 "https://todo.andrei-razvan.com", 
                 [{name:"React", img:"./images/react.png"}, {name:"CSS", img:"./images/css.png"}],
                 "https://github.com/Ssmartcode?tab=repositories")  
-    //-  I am foodie app  
-    +work-card("foodie",
-                "./images/foodie.png",
-                "I am foodie",
-                "Find recipe by ingredient or name",
-                "I am foodie web app",
-                "Search for a recipe by ingredients or by name. You can bookmark your favorite recipes and come back later for them.", 
-                "https://foodapp.andrei-razvan.com", 
-                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"}],
-                "https://github.com/Ssmartcode?tab=repositories")
 
-    //- ? Contact cards
-    +work-card("contacts",
-                "./images/contacts.png",
-                "Contacts cards",
-                "Save your contacts",
-                "Contacts cards",
-                "Save your contacts; phone number, e-mail address, personal website. You can add a image to recognize them faster", 
-                "https://contacts.andrei-razvan.com", 
-                [{name:"HTML", img:"./images/html-5.png"},{name:"CSS", img:"./images/css.png"}, {name:"javaScript", img:"./images/js.png"},{name:"nodeJs", img:"./images/node.png"}],
-                "https://github.com/Ssmartcode?tab=repositories")  
-    
     //- game project
     +work-card("game",
                 "./images/game.png",
@@ -194,7 +196,7 @@ section#work.work.hidden.section
                 [{name:"React", img:"./images/react.png"}],
                 "https://github.com/Ssmartcode?tab=repositories")    
     
-//- !---ABOUT SECTION---
+//- ---ABOUT SECTION---
 section#about.about.hidden.section
   .container
     // ? who am i

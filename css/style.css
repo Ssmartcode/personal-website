@@ -347,6 +347,10 @@ a {
   background: var(--text-color);
   animation: blink 0.8s infinite;
 }
+#home .buttons-row {
+  display: flex;
+  justify-content: space-between;
+}
 #home .button-contact,
 .button-work {
   font-size: 1.4rem;

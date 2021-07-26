@@ -105,6 +105,7 @@ document.addEventListener("keydown", (e) => {
 // HANDLE SUBMIT OF CONTACT FORM
 document.querySelector("#contact form").addEventListener("submit", (e) => {
   e.preventDefault();
+  clearErrors();
   let myForm = e.target;
   let formData = new FormData(myForm);
   if (validateForm()) {
@@ -115,7 +116,6 @@ document.querySelector("#contact form").addEventListener("submit", (e) => {
     })
       .then(() => {
         document.querySelector(".contact-modal").classList.remove("hidden");
-        clearErrors();
         myForm.reset();
       })
       .catch((error) => alert(error));
@@ -149,5 +149,8 @@ work.addEventListener("click", (e) => {
     displayModal(targetedCard);
   }
 });
+
 // EVENT LISTENER ON ESC KEY TO CLOSE MODAL
-document.addEventListener("keydown", closeModal);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
