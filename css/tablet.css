@@ -84,6 +84,9 @@ h1 {
     order: 1;
     display: block;
   }
+  #home .buttons-row {
+    flex-direction: column;
+  }
   #home .button-contact,
   .button-work {
     width: 100%;

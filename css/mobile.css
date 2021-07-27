@@ -145,8 +145,7 @@ h1 {
     padding: 0;
   }
 }
-@media screen and (min-width: 1201px) and (max-width: 1700px) {
-}
+
 @media screen and (max-width: 650px) {
   .modal-inner .technologies-row {
     flex-direction: column;
