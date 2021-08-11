@@ -144,6 +144,13 @@ a {
   visibility: hidden;
   transform: scale(0);
 }
+/* warning for heroku hosted applications */
+.warning {
+  color: #f05454;
+  font-weight: 900;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
 
 /* MODAL */
 .modal {
@@ -161,7 +168,7 @@ a {
 .modal-inner {
   position: relative;
   background-color: #f4f4f4;
-  max-width: 800px;
+  max-width: 1000px;
   text-align: left;
   box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
@@ -206,7 +213,9 @@ a {
 .modal-links {
   display: flex;
   justify-content: start;
+  align-items: center;
 }
+
 .modal .button-modal {
   background-color: transparent;
   border: 1px solid var(--text-color);
