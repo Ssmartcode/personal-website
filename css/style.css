@@ -15,7 +15,7 @@ html {
   min-height: 100%;
 }
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #e9e9e9;
   background-image: url("../images/rocky-wall.png");
   overflow-x: hidden;
@@ -288,7 +288,7 @@ a {
 }
 .side-bar ul li {
   position: relative;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   transition: transform 0.5s;
 }
 .side-bar ul li:hover {
@@ -302,17 +302,17 @@ a {
 .work-icon::after,
 .about-icon::after {
   content: attr(name);
-  position: absolute;
-  font-size: 1rem;
-  font-weight: 400;
+  display: block;
+  font-size: 0.9rem;
   color: #f4f4f4;
   text-transform: capitalize;
-  top: 7px;
-  left: 42px;
+  font-family: "Poppins", sans-serif;
   opacity: 0;
-  z-index: -1;
-  transform: translateX(-25px);
-  transition: ease opacity 0.5s, transform 0.5s;
+  left: 0;
+  bottom: 0;
+  margin-top: 0.2rem;
+  transform: translateX(-100%);
+  transition: ease-out opacity 0.5s, transform 0.6s;
 }
 .home-icon:hover::after,
 .contact-icon:hover::after,
@@ -320,6 +320,10 @@ a {
 .about-icon:hover::after {
   opacity: 1;
   transform: translateX(0);
+}
+
+.shrink {
+  transform: scale(0.7);
 }
 
 /* --- HOME SECTION --- */
@@ -339,7 +343,7 @@ a {
 #home p {
   min-width: 70%;
   text-align: left;
-  font-size: 2.3rem;
+  font-size: 2rem;
   color: rgb(35, 61, 206);
 }
 #home p .type-effect {

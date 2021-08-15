@@ -62,6 +62,7 @@ const switchPage = (nextPage) => {
   nextPage.page.classList.toggle("hidden");
   toggleActivePage.call(nextPage);
   currentPage = nextPage;
+
   // LAZY LOAD IMAGES WHEN ON WORK PAGE
   if (currentPage === sections.work) {
     document.querySelectorAll(".work-card img").forEach((img) => {
@@ -77,7 +78,6 @@ sideBar.addEventListener("click", (e) => {
   if (targetIcon) {
     switchPage(sections[targetIcon]);
   }
-  console.log(pageIndex);
 });
 
 // EVENT LLISTENER FOR CA BUTTONS(WORK ANC CONTACT)
