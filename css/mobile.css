@@ -96,8 +96,15 @@ h1 {
 }
 
 /* WORK */
+.modal {
+  overflow: scroll;
+}
 .modal-inner {
-  width: 80%;
+  width: 90%;
+  padding: 2rem 1rem;
+}
+.modal-inner .warning {
+  text-align: center;
 }
 .modal-links {
   flex-direction: column;

@@ -17,7 +17,7 @@ mixin work-card(name,img,workCardTitle, workCardParagraph, modalTitle, modalPara
           span.tech-name=technology.name
       //- if website is hosted on heroku - display a warning message
       if(heroku)
-        .warning ! This website might take few seconds to load initially ! 
+        .warning ! This website (or some components) might take few seconds to load initially ! 
       .modal-links
         a.button-modal(href=link)
           span Check it
