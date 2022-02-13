@@ -1,0 +1,126 @@
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='description' content='Andrei Razvan Web Developer and Wordpress Developer. Designing websites. Freelancer on Fiverr. Full stack developer')
+  meta(name='keywords' content='andrei razvan, web developer, web designer, wordpress, wordpress developer, hire website developer, fiverr web developer, react developer, andrei-razvan ')
+  title Articles - Andrei-Razvan
+
+  // FAV ICON
+  link(rel='shortcut icon' href='./images/favicon.png' type='image/x-icon')
+  
+  // FONTS
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap' rel='stylesheet')
+  link(href='  https://fonts.googleapis.com/css2?family=Bangers&family=Playfair+Display+SC&family=Prata&family=Yusei+Magic&display=swap' rel='stylesheet')
+  
+  // STYLESHEET
+  link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous")
+  link(rel='stylesheet' href='./css/article.css')
+  link(rel='stylesheet' href='css/tablet.css' media='screen and (max-width:1200px)')
+  link(rel='stylesheet' href='css/mobile.css' media='screen and (max-width:600px)')
+
+  // FONT AWESOME
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.2/css/all.css' integrity='sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu' crossorigin='anonymous')
+  // SCRIPT
+  script(defer='' src='./js/index.js' type='module')
+
+noscript 
+  h1 Please enable JavaScript to use my website!
+body
+  nav.py-2
+    .container-850.d-flex.align-items-center
+      .logo
+        img(src=`./images/logo-sidebar.png` alt="logo")
+      a.nav-link(href="./index.html") HomePage
+      .social-media
+        i.fab.fa-facebook
+        a(href="https://www.linkedin.com/in/andrei-razvan-anca-0b8761155/")
+          i.fab.fa-linkedin
+        i.fab.fa-twitter
+  .hero-article(style=`background:url(./images/jscode.jpg) rgba(0,0,0,0.4)`)
+    .container.h-100.d-flex.flex-column.justify-content-center.align-items-center
+      h1.text-light.text-center My experience with The Complete Javascript Course - Jonas Schmedtmann
+  .container.py-5.article-container
+    h1.article-title.mb-5.text-center My experience with The Complete Javascript Course
+      span.ms-2(style="font-size:0.9rem") by Andrei-Razvan Anca
+    .img.text-center
+      img.article__img-small.mb-5.rounded-1.border(src=`./images/js-course.jpeg` alt="article image")
+
+    //The article content
+    article.container-850
+      p
+        | This course has taught me the most important concepts in javaScript and it 
+        | also had many intersting and engaging projects to build. The course was structured
+        | in a way that makes it easy to follow and the instructor made sure to explain every 
+        | concept in details which makes this course a good choice for both beginners and experienced
+        | developers. The course starts with the very basics of programing like the classic "hello world"
+        | program, data structures, arrays, operators and so on followed by more advanced topics like DOM, events 
+        | Asynchronus javaScript, OOP and ES6+ syntax.
+      p 
+        | I think that the best way to learn a programming language is by practicing and writing code after each 
+        | concept that you learnt, and this course makes sure to include many side projects and big projects as well
+        | that you can develop. Every time a new project was presented i took my time to code it by myself and try to 
+        | reproduce the look and feel of the project as best as i could. After that i could compare the code that i had 
+        | to the one that Jonas wrote. This way i could see 2 different approaches of writing code and picked the good
+        | habbits and applied them further. 
+      p  
+        | Two projects that caught my attention were: 
+        strong The pig game
+        | and 
+        strong Forkify app. 
+        | I picked the idea that Jonas gave me for this 2 applications and created my own applications with all the knowledge that 
+        | i had gathered at that point in time and also modified the applications' design and functionality.
+
+      // The pig game
+      h2 The pig game
+      img(src="./images/pig-game-jonas.png", alt="pig game screenshot")
+      p.caption Jonas version of the game
+      img(src="./images/pig-game-mine.png", alt="pig game screenshot")
+      p.caption My version of the game
+      p The changes that i brought to this projects:
+        ul
+          li The javaScript code for all the functionalities has been changed 
+          li The second player is now played by computer (no second human player needed) 
+          li When the computer is playing a message is shown on top of the game board
+          li The icons and the design is slightly changed
+      p The link to the git hub repository can be found here: 
+        a(href="https://github.com/Ssmartcode/IA" target="blank") The pig game - Github
+        |, And the link to the game can be found here: 
+        a(href="https://pig-game-razvan-anca.netlify.app" target="blank") The pig game - Application
+      
+      // The foodie game
+      h2 The forkify app (i am foodie)
+      img(src="./images/foodie-jonas.png", alt="foodie screenshot")
+      p.caption Jonas version of the app
+      img(src="./images/foodie-mine.png", alt="foodie screenshot")
+      p.caption My version of the app
+      p The changes that i brought to this projects:
+        ul
+          li The javaScript code for all the functionalities has been changed 
+          li The icons, animations and the design has beed completely changed
+      p The link to the git hub repository can be found here: 
+        a(href="https://github.com/Ssmartcode/IA" target="blank") I am foodie - Github
+        |, And the link to the game can be found here: 
+        a(href="https://pig-game-razvan-anca.netlify.app" target="blank") I am foodie - Website 
+
+      //Conclusion
+      h2 Conclusions 
+      p While this course has many things to offer and it is a good start for those who are 
+        | completely new to programming or they already have some programming experience and want 
+        | to learn javaScript, the only way you can get the best of this course is by building all the 
+        | projects from scratch and then compare your result to Jona's result. This is the approach i have 
+        | with all the courses that i take and so far it has paid off.
+      p I would give this course a 5/5 rating and recommend it to anyone that want to learn javaScript or they 
+        | want to consolidate the knowledge they have.
+      p At the end of the course, if you complete all the steps, you will be rewarded with a certification (as with 
+        | every course on udemy)
+      img(src="./images/foodie-mine.png", alt="certification screenshot")
+      
+
+      
+      
+    //Creator ribbon
+    .container-850.position-relative
+      .card(style="cursor:initial").bg-transparent.border-1.border-primary.border-round.col-lg-6.mt-4 
+        .card-body
+          .card-text Created on 10.02.2022 #{formatedDate} by Andrei-Razvan Anca
