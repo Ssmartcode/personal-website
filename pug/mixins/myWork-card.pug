@@ -1,6 +1,6 @@
 mixin work-card(name,img,workCardTitle, workCardParagraph, modalTitle, modalParagraph, link, technologies, github,heroku)
   .work-card(name=name) 
-    img(data-src=img alt='My project image. Requires javaScript')
+    img(data-src=img alt='My project image. Requires javaScript' src=img)
     .card-overlay
       h2=workCardTitle
       p=workCardParagraph
